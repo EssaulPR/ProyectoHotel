@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/sass/style.css">
+    <title>Appiin</title>
+</head>
+
+<body>
+    <!-- nav -->
+    {% if current_user.is_anonymous %}
+        {% else %}
+        <nav class="nav bg-dark">
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('habit_UsR') }}">Habitaciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('client_UsR') }}">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('logout') }}">Salir</a>
+            </li>
+            {% with messages = get_flashed_messages() %}
+        {% if messages %}
+                {% for message in messages %}
+                    <h4>{{message}}</h4>
+                {% endfor  %}
+        {% endif %}
+    {% endwith %}
+        </nav>
+    {% endif %}
+    
+    <!-- FormLogin -->
+    {% block content %}
+    {% endblock %}
+    <!-- Habit_UsR -->
+    {% block habitUsR %}
+    {% endblock %}
+    <!-- client_UsR -->
+    {% block clientUsR %}
+    {% endblock %}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!-- Formulario de inicio de sesion -->
+{% block content %}
+<section class="cont-login">
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <h4>{{message}}</h4>
+    {% endfor  %}
+    {% endif %}
+    {% endwith %}
+
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <h3>Iniciar sesión</h3>
+        <p>
+            {{ form.username.label }}
+            {{ form.username(size=25) }}
+        </p>
+        <p>
+            {{ form.password.label }}
+            {{ form.password(size=25) }}
+        </p>
+        <p>
+            {{ form.remember_me() }}
+            {{ form.remember_me.label }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+</section>
+{% endblock %}
