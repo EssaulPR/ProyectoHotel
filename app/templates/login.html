@@ -3,32 +3,44 @@
 {% block content %}
 <section class="cont-login">
 
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <h4>{{message}}</h4>
-    {% endfor  %}
-    {% endif %}
-    {% endwith %}
-
-    <form action="" method="POST">
+    <form action="" method="POST" class="card clwht">
         {{ form.hidden_tag() }}
-        <h3>Iniciar sesión</h3>
-        <p>
-            {{ form.username.label }}
-            {{ form.username(size=25) }}
-        </p>
-        <p>
-            {{ form.password.label }}
+        <div>
+            <h3>Iniciar sesión</h3>
+            <hr>
+        </div>
+
+        <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <h4><strong>{{message}}</strong></h4>
+            <hr>
+            {% endfor  %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        
+        <div class="cont-form">
+            <!-- {{ form.username.label }} -->
+            {{ form.username(size=25)}}
+        </div>
+        
+        <div class="cont-form">
+            <!-- {{ form.password.label }} -->
             {{ form.password(size=25) }}
-        </p>
-        <p>
+        </div>
+
+        <div class="cont-form btn-left">
             {{ form.remember_me() }}
             {{ form.remember_me.label }}
-        </p>
-        <p>
-            {{ form.submit() }}
-        </p>
+        </div class="cont-form">
+
+        <div class="cont-form">
+            <!-- {{ form.submit() }} -->
+            <input class="btn-submit" type="submit" value="Iniciar">
+        </div>
+
     </form>
 </section>
 {% endblock %}

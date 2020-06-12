@@ -18,7 +18,7 @@ def login():
         # Iniciar sesion con bdd
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash("No se encontro el usuario o la contraseña esta incorrecta.")
+            flash("Nombre de usuario o contraseña incorrecta.")
             return redirect(url_for("login"))
         login_user(user, remember=form.remember_me.data)
         flash("Iniciaste session correctamente, Hola {}".format(form.username.data))

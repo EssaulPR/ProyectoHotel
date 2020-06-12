@@ -1,3 +1,55 @@
+.cont-login {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffdb66;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ffdb66), color-stop(48%, rgba(255, 160, 82, 0.76)), color-stop(100%, rgba(255, 160, 82, 0.5)));
+  background: -webkit-gradient(linear, left top, right top, from(#ffdb66), color-stop(48%, rgba(255, 160, 82, 0.76)), to(rgba(255, 160, 82, 0.5)));
+  background: linear-gradient(to right, #ffdb66 0%, rgba(255, 160, 82, 0.76) 48%, rgba(255, 160, 82, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdb66', endColorstr='#ffa052', GradientType=1 );
+}
+
+.cont-login .card {
+  text-align: center;
+  -webkit-box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
+  box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
+  width: 350px;
+  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.cont-login .card hr {
+  background-color: white;
+}
+
+.cont-login .btn-left {
+  text-align: left;
+  margin-left: 35px;
+}
+
+.cont-login .clwht {
+  color: white;
+}
+
+.cont-login .cont-form {
+  margin-bottom: 8px;
+}
+
+.cont-login .cont-form .btn-submit {
+  width: 220px;
+}
+
 body {
   background-color: whitesmoke;
 }
