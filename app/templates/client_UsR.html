@@ -2,4 +2,17 @@
 <!-- Mostrar informacion sobre clientes del usuario de recepcionista -->
 {% block clientUsR %}
   <h1>Proximamente Informacion sobre clientes</h1>
+  <a href="{{ url_for('crearClt') }}">Agregar Clientes</a>
+  
+  <div>
+    {% for cliente in clientes %}
+    <p>{{cliente.nameClt}}</p>
+    <p>{{cliente.apellidoPateClt}}</p>
+    <p>{{cliente.apellidoMateClt}}</p>
+    <p>{{cliente.phone}}</p>
+    <p>{{cliente.phone2}}</p>
+    <p>{{cliente.placaCarro}}</p>
+    <p>{{cliente.placaCarro2}}</p>
+    {% endfor %}
+  </div>
 {% endblock %}
