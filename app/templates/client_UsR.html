@@ -1,18 +1,40 @@
 {% extends "base.html" %}
 <!-- Mostrar informacion sobre clientes del usuario de recepcionista -->
 {% block clientUsR %}
-  <h1>Proximamente Informacion sobre clientes</h1>
-  <a href="{{ url_for('crearClt') }}">Agregar Clientes</a>
-  
-  <div>
-    {% for cliente in clientes %}
-    <p>{{cliente.nameClt}}</p>
-    <p>{{cliente.apellidoPateClt}}</p>
-    <p>{{cliente.apellidoMateClt}}</p>
-    <p>{{cliente.phone}}</p>
-    <p>{{cliente.phone2}}</p>
-    <p>{{cliente.placaCarro}}</p>
-    <p>{{cliente.placaCarro2}}</p>
-    {% endfor %}
-  </div>
+  <section class="cont-cltUsr">
+    <h1>Clientes El Cielo</h1>
+
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Telefono Auxiliar</th>
+          <th scope="col">Placa Carro</th>
+          <th scope="col">Segundo Carro</th>
+          <th scope="col">Modificar</th>
+
+        </tr>
+      </thead>
+      {% for cliente in clientes %}
+      <tbody>
+        <tr class="bg-white">
+          <th></th>
+          <td>{{cliente.nameClt}} {{cliente.apellidoPateClt}} {{cliente.apellidoMateClt}}</td>
+          <td>{{cliente.phone}}</td>
+          <td>{{cliente.phone2}}</td>
+          <td>{{cliente.placaCarro}}</td>
+          <td>{{cliente.placaCarro2}}</td>
+          <td>
+            <form method="post" action="{{ url_for('edit_crearClt', id=cliente.id )}}">
+              <input type="submit" value="Editar">
+            </form>
+          </td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </section>
 {% endblock %}

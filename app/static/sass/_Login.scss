@@ -6,17 +6,21 @@
   align-items: center;
   
 
-    background: rgba(255,219,102,1);
-    background: -moz-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,219,102,1)), color-stop(48%, rgba(255,160,82,0.76)), color-stop(100%, rgba(255,160,82,0.5)));
-    background: -webkit-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
-    background: -o-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
-    background: -ms-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
-    background: linear-gradient(to right, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdb66', endColorstr='#ffa052', GradientType=1 );
-
+    // background: rgba(255,219,102,1);
+    // background: -moz-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    // background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,219,102,1)), color-stop(48%, rgba(255,160,82,0.76)), color-stop(100%, rgba(255,160,82,0.5)));
+    // background: -webkit-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    // background: -o-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    // background: -ms-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    // background: linear-gradient(to right, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdb66', endColorstr='#ffa052', GradientType=1 );
+  img{
+    position: relative;
+    top: -240px;
+  }
 
   .card {
+    position: absolute;
     text-align: center;
     -webkit-box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
     -moz-box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);

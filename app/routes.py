@@ -64,3 +64,37 @@ def crearClt():
         db.session.commit()
         return redirect(url_for("client_UsR"))
     return render_template("crearClt.html", form=form)
+
+# Se crea una ruta para editar con metodo post
+@app.route("/crearClt/edit/<int:id>", methods=["POST"])
+@login_required
+def edit_crearClt(id):
+    clt = Cliente.query.filter_by(id=id).first()
+    if clt:
+        if current_user.id == clt.users_id:
+            pass
+            # Editar
+            form = CreacionClt()
+            if form.validate_on_submit():
+                clt.nameClt = form.nameClt.data
+                clt.apellidoPateClt = form.apellidoPateClt.data
+                clt.apellidoMateClt = form.apellidoMateClt.data  
+                clt.phone = form.phone.data  
+                clt.phone2 = form.phone2.data
+                clt.placaCarro = form.placaCarro.data
+                clt.placaCarro2 = form.placaCarro2.data
+                db.session.add(clt)
+                db.session.commit()
+                return redirect(url_for("client_UsR"))
+            form.nameClt.data = clt.nameClt
+            form.apellidoPateClt.data = clt.apellidoPateClt
+            form.apellidoMateClt.data = clt.apellidoMateClt
+            form.phone.data = clt.phone
+            form.phone2.data = clt.phone2
+            clt.placaCarro = form.placaCarro.data
+            return render_template("crearClt.html", form=form, edit=True)
+        else:
+            flash("No tienes permisos para borrar este contacto")
+    else:
+        flash("No existe")
+    return redirect(url_for("client_UsR"))

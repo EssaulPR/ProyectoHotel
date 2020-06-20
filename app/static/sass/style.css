@@ -13,14 +13,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #ffdb66;
-  background: -webkit-gradient(left top, right top, color-stop(0%, #ffdb66), color-stop(48%, rgba(255, 160, 82, 0.76)), color-stop(100%, rgba(255, 160, 82, 0.5)));
-  background: -webkit-gradient(linear, left top, right top, from(#ffdb66), color-stop(48%, rgba(255, 160, 82, 0.76)), to(rgba(255, 160, 82, 0.5)));
-  background: linear-gradient(to right, #ffdb66 0%, rgba(255, 160, 82, 0.76) 48%, rgba(255, 160, 82, 0.5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdb66', endColorstr='#ffa052', GradientType=1 );
+}
+
+.cont-login img {
+  position: relative;
+  top: -240px;
 }
 
 .cont-login .card {
+  position: absolute;
   text-align: center;
   -webkit-box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
   box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
@@ -50,7 +51,62 @@
   width: 220px;
 }
 
-body {
+.cont-cltUsr h1 {
+  text-align: center;
+}
+
+.cont-crearCtl {
+  height: 74vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cont-crearCtl .borde {
+  text-align: center;
+  -webkit-box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
+  box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
+  width: 350px;
+  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.cont-crearCtl h2 {
+  color: whitesmoke;
+}
+
+.cont-crearCtl hr {
   background-color: whitesmoke;
+}
+
+.cont-crearCtl .cont-form {
+  margin: 15px;
+}
+
+body {
+  background: #ffdb66;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ffdb66), color-stop(48%, rgba(255, 160, 82, 0.76)), color-stop(100%, rgba(255, 160, 82, 0.5)));
+  background: -webkit-gradient(linear, left top, right top, from(#ffdb66), color-stop(48%, rgba(255, 160, 82, 0.76)), to(rgba(255, 160, 82, 0.5)));
+  background: linear-gradient(to right, #ffdb66 0%, rgba(255, 160, 82, 0.76) 48%, rgba(255, 160, 82, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdb66', endColorstr='#ffa052', GradientType=1 );
+}
+
+nav img {
+  height: 50px;
+  width: 50px;
+}
+
+nav .navbar-text {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=style.css.map */

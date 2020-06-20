@@ -1,4 +1,23 @@
 @import"./Login";
+@import"./clientes_usr";
+@import"./crearclt";
+
 body{
-    background-color: whitesmoke;
+    background: rgba(255,219,102,1);
+    background: -moz-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,219,102,1)), color-stop(48%, rgba(255,160,82,0.76)), color-stop(100%, rgba(255,160,82,0.5)));
+    background: -webkit-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    background: -o-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    background: -ms-linear-gradient(left, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    background: linear-gradient(to right, rgba(255,219,102,1) 0%, rgba(255,160,82,0.76) 48%, rgba(255,160,82,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffdb66', endColorstr='#ffa052', GradientType=1 );
+}
+nav{
+    img{
+        height: 50px;
+        width: 50px;
+    }
+    .navbar-text{
+        margin-left: 10px;
+    }
 }

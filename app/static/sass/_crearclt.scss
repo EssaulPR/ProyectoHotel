@@ -1,0 +1,27 @@
+.cont-crearCtl {
+  height: 74vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .borde{
+    text-align: center;
+    -webkit-box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
+    -moz-box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
+    box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
+
+    width: 350px;
+    padding: 35px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+  h2{
+    color: whitesmoke;
+  }
+  hr{
+    background-color: whitesmoke;
+  }
+  .cont-form{
+      margin: 15px;
+  }
+}

@@ -2,57 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/sass/style.css">
-    <title>Appiin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="../static/sass/style.css">
+  <title>Appiin</title>
 </head>
 
 <body>
-    <!-- nav -->
-    {% if current_user.is_anonymous %}
-        {% else %}
-        <nav class="nav bg-dark">
-            <li class="nav-item">
-                <a class="nav-link active" href="{{ url_for('habit_UsR') }}">Habitaciones</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="{{ url_for('client_UsR') }}">Clientes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="{{ url_for('logout') }}">Salir</a>
-            </li>
-            {% with messages = get_flashed_messages() %}
-        {% if messages %}
-                {% for message in messages %}
-                    <h4>{{message}}</h4>
-                {% endfor  %}
-        {% endif %}
-    {% endwith %}
-        </nav>
-    {% endif %}
-    
-    <!-- FormLogin -->
-    {% block content %}
-    {% endblock %}
-    <!-- Habit_UsR -->
-    {% block habitUsR %}
-    {% endblock %}
-    <!-- client_UsR -->
-    {% block clientUsR %}
-    {% endblock %}
-    <!-- Creacion de cliente -->
-    {% block crearCtl %}
-    {% endblock %}
+  <!-- nav HACER LOS ENLANCES TIPO BOTON!!-->
+  {% if current_user.is_anonymous %}
+  {% else %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="../static/img/AppInn.ico" alt="">
+    <a class="nav-link text-white" href="{{ url_for('habit_UsR') }}">Habitaciones</a>
+    <a class="nav-link text-white" href="{{ url_for('client_UsR') }}">Clientes</a>
+    <a class="nav-link text-white" href="{{ url_for('crearClt') }}">Agregar Clientes</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('logout') }}">Cerrar Session</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      {{current_user.username}}
+    </span>
+    </div>
+  </nav>
+  {% endif %}
+  <!-- Mensaje -->
+  {% if current_user.is_anonymous %}
+  {% else %}
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
 
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  {% for message in messages %}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  {% endif %}
+
+  <!-- FormLogin -->
+  {% block content %}
+  {% endblock %}
+  <!-- Habit_UsR -->
+  {% block habitUsR %}
+  {% endblock %}
+  <!-- client_UsR -->
+  {% block clientUsR %}
+  {% endblock %}
+  <!-- Creacion de cliente -->
+  {% block crearCtl %}
+  {% endblock %}
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

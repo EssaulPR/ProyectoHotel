@@ -2,14 +2,11 @@
 <!-- Mostrar informacion sobre creacion de clientes formulario -->
 {% block crearCtl %}
 <section class="cont-crearCtl">
-
-    <form action="" method="POST">
-        {{ form.hidden_tag() }}
-        <div>
-            <h3>Nuevo Cliente</h3>
-            <hr>
-        </div>
     
+    <form action="" method="POST" class="borde">
+        {{ form.hidden_tag() }}
+        <h2>Nuevo Cliente</h2>
+        <hr>
         <div>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -52,7 +49,7 @@
         </div>
         <div class="cont-form">
             <!-- {{ form.submit() }} -->
-            <input class="btn-submit" type="submit" value="Registrar">
+            <input class="btn-submit" type="submit" value="Aceptar">
         </div>
     
     </form>
