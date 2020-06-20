@@ -66,7 +66,7 @@ def crearClt():
     return render_template("crearClt.html", form=form)
 
 # Se crea una ruta para editar con metodo post
-@app.route("/crearClt/edit/<int:id>", methods=["POST"])
+@app.route("/crearCltEdit/edit/<int:id>", methods=["POST"])
 @login_required
 def edit_crearClt(id):
     clt = Cliente.query.filter_by(id=id).first()
@@ -92,7 +92,7 @@ def edit_crearClt(id):
             form.phone.data = clt.phone
             form.phone2.data = clt.phone2
             clt.placaCarro = form.placaCarro.data
-            return render_template("crearClt.html", form=form, edit=True)
+            return render_template("crearCltEdit.html", form=form, edit=True)
         else:
             flash("No tienes permisos para borrar este contacto")
     else:
