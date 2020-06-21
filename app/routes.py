@@ -34,7 +34,11 @@ def logout():
 @app.route("/habit_UsR")
 @login_required
 def habit_UsR():
-    return render_template("habit_UsR.html")    
+    if not current_user.is_authenticated:
+        return redirect(url_for("login"))
+    # imprimir bdd habitaciones
+    habitaciones = Habitacion.query.all()
+    return render_template("habit_UsR.html", habitaciones = habitaciones)  
 
 @app.route("/client_UsR")
 @login_required
@@ -42,7 +46,7 @@ def client_UsR():
     if not current_user.is_authenticated:
         return redirect(url_for("login"))
     # imprimir lo que mando desde crearClt
-    clientes = Cliente.query.filter_by(users_id = current_user.id).all()
+    clientes = Cliente.query.all()
     return render_template("client_UsR.html", clientes = clientes) 
 
 @app.route("/crearClt", methods=["GET","POST"])

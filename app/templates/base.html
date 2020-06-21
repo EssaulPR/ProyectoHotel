@@ -8,7 +8,7 @@
   <meta name="Description" content="Enter your description here" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  <link rel="stylesheet" href="../static/sass/style.css">
+  <link rel="stylesheet" href="/static/sass/style.css">
   <title>Appiin</title>
 </head>
 
@@ -17,7 +17,7 @@
   {% if current_user.is_anonymous %}
   {% else %}
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="../static/img/AppInn.ico" alt="">
+    <img src="/static/img/AppInn.ico" alt="">
     <a class="nav-link text-white" href="{{ url_for('habit_UsR') }}">Habitaciones</a>
     <a class="nav-link text-white" href="{{ url_for('client_UsR') }}">Clientes</a>
     <a class="nav-link text-white" href="{{ url_for('crearClt') }}">Agregar Clientes</a>

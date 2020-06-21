@@ -1,5 +1,32 @@
 {% extends "base.html" %}
 <!-- Mostrar informacion sobre habitaciones del usuario de recepcionista -->
+<!-- MODIFICAR LAS CLASES DESPUES!!! -->
 {% block habitUsR %}
-  <h1>Proximamente Informacion sobre habitaciones</h1>
+<section class="cont-cltUsr">
+  <h1>Habitaciones El Cielo</h1>
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Numero de Habitacion</th>
+        <th scope="col">Tipo de Habitacion</th>
+        <th scope="col">Capacidad de Habitacion</th>
+        <th scope="col">Costo de Habitacion</th>
+      </tr>
+    </thead>
+    {% for habitacion in habitaciones %}
+    <tbody>
+      <tr class="bg-white">
+        <th></th>
+        <td>{{habitacion.numHabit}}</td>
+        <td>{{habitacion.tipoHabit}}</td>
+        <td>{{habitacion.capXHabit}}</td>
+        <td>{{habitacion.costoXHabit}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</section>
 {% endblock %}
