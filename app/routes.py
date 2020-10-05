@@ -40,6 +40,17 @@ def habit_UsR():
     habitaciones = Habitacion.query.all()
     return render_template("habit_UsR.html", habitaciones = habitaciones)  
 
+@app.route("/habit_UsR/api")
+def habit_UsR_api():
+    # imprimir bdd habitaciones
+    habitaciones = Habitacion.query.all()
+    json = {}
+    lista = []
+    for habitacion in habitaciones:
+        lista.append(habitacion)
+    json["Habitaciones"]= lista
+    return json  
+
 @app.route("/client_UsR")
 @login_required
 def client_UsR():
