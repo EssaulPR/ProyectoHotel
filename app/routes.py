@@ -47,7 +47,7 @@ def habit_UsR_api():
     json = {}
     lista = []
     for habitacion in habitaciones:
-        lista.append(habitacion)
+        lista.append(habitacion.toMap())
     json["Habitaciones"]= lista
     return json  
 

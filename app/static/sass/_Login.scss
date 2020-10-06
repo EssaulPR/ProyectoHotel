@@ -1,5 +1,4 @@
 .cont-login {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +18,22 @@
     top: -240px;
   }
 
+  @media (min-width: 992px) {
+    img{
+      position: relative;
+      top: 75px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    img{
+      position: relative;
+      top: 120px;
+    }
+  }
+
   .card {
+    top: 300px;
     position: absolute;
     text-align: center;
     -webkit-box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
@@ -32,6 +46,24 @@
  
     hr {
       background-color: white;
+    }
+  }
+  @media (max-width: 768px) {
+    .card {
+      top: 350px;
+      position: absolute;
+      text-align: center;
+      -webkit-box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
+      -moz-box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
+      box-shadow: 16px 19px 30px 0px rgba(0,0,0,0.67);
+  
+      width: 350px;
+      padding: 35px;
+      background-color: rgba(0, 0, 0, 0.5) !important;
+   
+      hr {
+        background-color: white;
+      }
     }
   }
   .btn-left{

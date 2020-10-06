@@ -1,5 +1,4 @@
 .cont-login {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,7 +19,22 @@
   top: -240px;
 }
 
+@media (min-width: 992px) {
+  .cont-login img {
+    position: relative;
+    top: 75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cont-login img {
+    position: relative;
+    top: 120px;
+  }
+}
+
 .cont-login .card {
+  top: 300px;
   position: absolute;
   text-align: center;
   -webkit-box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
@@ -32,6 +46,22 @@
 
 .cont-login .card hr {
   background-color: white;
+}
+
+@media (max-width: 768px) {
+  .cont-login .card {
+    top: 350px;
+    position: absolute;
+    text-align: center;
+    -webkit-box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
+    box-shadow: 16px 19px 30px 0px rgba(0, 0, 0, 0.67);
+    width: 350px;
+    padding: 35px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+  .cont-login .card hr {
+    background-color: white;
+  }
 }
 
 .cont-login .btn-left {

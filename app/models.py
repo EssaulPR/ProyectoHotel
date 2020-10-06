@@ -49,6 +49,15 @@ class Habitacion(db.Model):
     capXHabit = db.Column(db.Integer)
     costoXHabit = db.Column(db.Integer)
     rentaHabitaciones = db.relationship("RentaHabitacion", backref="habitacion", lazy="dynamic")
+    
+    def toMap(self):
+        diccionario = {}
+        diccionario["Numero"]=self.numHabit
+        diccionario["Tipo"]=self.tipoHabit        
+        diccionario["Capacidad"]=self.capXHabit    
+        diccionario["Costo"]=self.costoXHabit   
+        return diccionario 
+
 
     def __repr__(self):
         return "<Habitacion> {}".format(self.numHabit)
