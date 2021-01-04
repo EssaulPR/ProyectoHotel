@@ -139,4 +139,13 @@ nav img {
 nav .navbar-text {
   margin-left: 10px;
 }
+
+nav li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+nav .TitularNav {
+  margin-left: 15px;
+}
 /*# sourceMappingURL=style.css.map */

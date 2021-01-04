@@ -14,10 +14,16 @@
         <th scope="col">Tipo de Habitacion</th>
         <th scope="col">Capacidad de Habitacion</th>
         <th scope="col">Costo de Habitacion</th>
+        <th scope="col">Nombre del cliente</th>
+        <th scope="col">Numero de Personas</th>
+        <th scope="col">Dia de inicio</th>
+        <th scope="col">Dia de salida</th>
+        <th scope="col">Importe Total</th>
       </tr>
     </thead>
-    {% for habitacion in habitaciones %}
+    {% for habitacion in habitaciones %}  
     <tbody>
+      <!-- Modificar la extracion de datos de la bdd, se toman de las habitaciones y necesito extraerlas de renta de habitaciones -->
       <tr class="bg-white">
         <th></th>
         <td>{{habitacion.numHabit}}</td>

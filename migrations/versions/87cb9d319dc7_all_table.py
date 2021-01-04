@@ -1,8 +1,8 @@
-"""Table Clt Habit User
+"""All table
 
-Revision ID: 53844702c72c
+Revision ID: 87cb9d319dc7
 Revises: 
-Create Date: 2020-06-19 19:02:55.208420
+Create Date: 2020-12-30 16:27:12.464220
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '53844702c72c'
+revision = '87cb9d319dc7'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -32,6 +32,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('username', sa.String(length=64), nullable=True),
     sa.Column('password_hash', sa.String(length=128), nullable=True),
+    sa.Column('type_User', sa.String(length=64), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_users_username'), 'users', ['username'], unique=True)
