@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 <!-- Mostrar informacion sobre clientes del usuario de recepcionista -->
-{% block clientUsR %}
+{% block clientAdmin %}
   <section class="cont-cltUsr">
     <h1>Clientes El Cielo</h1>
 
@@ -30,10 +30,10 @@
           <td>{{cliente.placaCarro2}}</td>
           <td>{{cliente.activo}}</td>
           <td>
-            <form method="post" action="{{ url_for('edit_crearClt', id=cliente.id )}}">
+            <form method="post" action="{{ url_for('crear_Clt_AdminEdit', id=cliente.id )}}">
               <input type="submit" value="Editar">
             </form>
-            
+            <a href="/Delete_cliente/delete/{{cliente.id}}"><button>Eliminar cliente</button></a>
           </td>
         </tr>
       </tbody>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<!-- Mostrar informacion sobre creacion de clientes formulario -->
+{% block crearUSR %}
+<section class="cont-crearCtl">
+    
+    <form action="" method="POST" class="borde">
+        {{ form.hidden_tag() }}
+        <h2>Nuevo Usuario</h2>
+        <hr>
+        <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <h4><strong>{{message}}</strong></h4>
+            <hr>
+            {% endfor  %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        
+        <div class="cont-form">
+            {{ form.username(size=25,placeholder="Nombre de Usuario")}}
+        </div>
+        <div class="cont-form">
+
+            {{ form.password(size=25,placeholder="Contraseña")}}
+        </div>        
+        <div class="cont-form">
+            <!-- {{ form.submit() }} -->
+            <input class="btn-submit" type="submit" value="crear">
+        </div>
+    
+    </form>
+
+</section>
+{% endblock %}

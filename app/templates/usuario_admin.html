@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+<!-- Mostrar informacion sobre clientes del usuario de recepcionista -->
+{% block usuarioAdmin %}
+  <section class="cont-cltUsr">
+    <h1>Clientes El Cielo</h1>
+
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Modificar</th>
+
+        </tr>
+      </thead>
+      {% for user in usuarios %}
+      <tbody>
+        <tr class="bg-white">
+          <th></th>
+          <td>{{user.username}}</td>
+          <td>{{user.type_User}}</td>
+          <td><a href="/Delete_usuarios/delete/{{user.id}}"><button>Eliminar cliente</button></a></td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </section>
+{% endblock %}

@@ -1,4 +1,38 @@
 {% extends "base.html" %}
 {% block habitAdmin %}
-<h1>Prueba de admin</h1>
+<section class="cont-cltUsr">
+    <h1>Habitaciones El Cielo</h1>
+  
+  
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Numero de Habitacion</th>
+          <th scope="col">Tipo de Habitacion</th>
+          <th scope="col">Capacidad de Habitacion</th>
+          <th scope="col">Costo de Habitacion</th>
+          <th scope="col">Modificar</th>
+        </tr>
+      </thead>
+      {% for habitacion in habitaciones %}  
+      <tbody>
+        <!-- Modificar la extracion de datos de la bdd, se toman de las habitaciones y necesito extraerlas de renta de habitaciones -->
+        <tr class="bg-white">
+          <th></th>
+          <td>{{habitacion.numHabit}}</td>
+          <td>{{habitacion.tipoHabit}}</td>
+          <td>{{habitacion.capXHabit}}</td>
+          <td>{{habitacion.costoXHabit}}</td>
+          <td>
+            <a href="/Edit_Habit/edit/{{habitacion.id}}"><button>Editar habitación</button></a>
+            <br>
+            <a href="/Delete_Habit/delete/{{habitacion.id}}"><button>Eliminar habitación</button></a>
+          </td>
+          
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </section>
 {% endblock %}

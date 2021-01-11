@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 <!-- Mostrar informacion sobre creacion de clientes formulario -->
-{% block asignacion_habit %}
+{% block CrearhabitAdmin %}
 <section class="cont-crearCtl">
     
     <form action="" method="POST" class="borde">
         {{ form.hidden_tag() }}
-        <h2>Nuevo Cliente</h2>
+        <h2>Nueva habitacion</h2>
         <hr>
         <div>
             {% with messages = get_flashed_messages() %}
@@ -17,34 +17,23 @@
             {% endif %}
             {% endwith %}
         </div>
+        
         <div class="cont-form">
 
-            {{ form.fkIdHabitacion(size=25,placeholder="Nombre")}}
+            {{ form.numHabit(size=25,placeholder="Numero de habitacion")}}
         </div>
         <div class="cont-form">
 
-            {{ form.fkIdClientes(size=25,placeholder="Apellido Paterno")}}
+            {{ form.tipoHabit(size=1,placeholder="Tipo de habitacion")}}
         </div>
         <div class="cont-form">
 
-            {{ form.importeTotal(size=25,placeholder="Nombre")}}
-        </div>
-        <div class="cont-form">
-
-            {{ form.numPersonas(size=25,placeholder="Apellido Paterno")}}
-        </div>
-        <div class="cont-form">
-
-            {{ form.diaInicio(size=25,placeholder="Apellido Materno")}}
+            {{ form.capXHabit(size=25,placeholder="Capaciadad de habitacion")}}
         </div>
         
         <div class="cont-form">
 
-            {{ form.diaFinalizado(size=25, placeholder="Numero Telefono") }}
-        </div>
-        <div class="cont-form">
-
-            {{ form.diasDeEstancia(size=25, placeholder="Numero Telefono Auxiliar") }}
+            {{ form.costoXHabit(size=25, placeholder="Costo de habitacion") }}
         </div>
         <div class="cont-form">
             <!-- {{ form.submit() }} -->

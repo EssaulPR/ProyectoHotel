@@ -19,44 +19,66 @@
   <!-- Nav Admin-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <img src="/static/img/AppInn.ico" alt="">
-
     <a class="navbar-brand TitularNav" href="#">TipoAdmin</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
+    <li class="nav-item dropdown">
+      <a class="text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Habitaciones
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ url_for('habit_asig_admin') }}">Recamaras asignadas</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{{ url_for('habit_admin') }}">Recamaras</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{{ url_for('crear_habit') }}">Crear Recamara</a>
+        <div class="dropdown-divider"></div>
+      </div>
+    </li>
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('logout') }}">Cerrar Session</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        {{current_user.username}}
-      </span>
+    <li class="nav-item dropdown">
+      <a class="text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Clientes
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ url_for('client_admin')}}">Detalles de Clientes</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{{ url_for('crear_Clt_Admin')}}">Agregar Cliente</a>
+        <div class="dropdown-divider"></div>
+      </div>
+    </li>
 
-    </div>
+    <li class="nav-item dropdown">
+      <a class="text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Usuarios
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ url_for('usuario_admin') }}">Detalles de usuario</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{{ url_for('crear_USR') }}">Agregar usuario</a>
+        <div class="dropdown-divider"></div>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Reportes
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Detalles de report</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">reportesasd</a>
+        <div class="dropdown-divider"></div>
+      </div>
+    </li>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('logout') }}">Cerrar Session</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      {{current_user.username}}
+    </span>
+
   </nav>
   {% else %}
   <!-- Nav Recepcionista-->
@@ -68,19 +90,17 @@
         Habitaciones
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ url_for('habit_UsR') }}">Recamaras</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="{{ url_for('asignacion_habit') }}">Asignacion De Recamara</a>
+        <a class="dropdown-item" href="{{ url_for('habit_UsR') }}">Detalles de Recamaras</a>
         <div class="dropdown-divider"></div>
       </div>
     </li>
 
     <li class="nav-item dropdown">
       <a class="text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Activos
+        Clientes
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ url_for('client_UsR') }}">Clientes</a>
+        <a class="dropdown-item" href="{{ url_for('client_UsR') }}">Detalles de Clientes</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="{{ url_for('crearClt') }}">Agregar Cliente</a>
         <div class="dropdown-divider"></div>
@@ -95,7 +115,7 @@
     <span class="navbar-text">
       {{current_user.username}}
     </span>
-    </div>
+
   </nav>
   {% endif %}
   <!-- Mensaje -->
@@ -123,9 +143,6 @@
   <!-- Habit_UsR -->
   {% block habitUsR %}
   {% endblock %}
-  <!-- Admin -->
-  {% block habitAdmin %}
-  {% endblock %}
   <!-- client_UsR -->
   {% block clientUsR %}
   {% endblock %}
@@ -137,6 +154,36 @@
   {% endblock %}
   <!-- Asignacion de habitaciones -->
   {% block asignacion_habit %}
+  {% endblock %}
+  <!-- Habitacion Admin -->
+  {% block habitAdmin %}
+  {% endblock %}
+  <!-- Crear Habitacion Admin -->
+  {% block CrearhabitAdmin %}
+  {% endblock %}
+  <!-- edicion de habitacion Admin -->
+  {% block EditHabitAdmin %}
+  {% endblock %}
+  <!-- delete de habitacion Admin -->
+  {% block DeleteHabitAdmin %}
+  {% endblock %}
+  <!-- client_admin -->
+  {% block clientAdmin %}
+  {% endblock %}
+  <!-- UsuarioAdmin -->
+  {% block usuarioAdmin %}
+  {% endblock %}
+  <!-- CrearUSR Admin-->
+  {% block crearUSR %}
+  {% endblock %}
+  <!-- CrearClt Admin -->
+  {% block crearCltAdmin %}
+  {% endblock %}
+  <!-- edicion de clt Admin -->
+  {% block EditCltAdmin %}
+  {% endblock %}
+  <!-- Habitaciones con asignacion de cliente Admin -->
+  {% block habitAsignacionRecamara %}
   {% endblock %}
   
 

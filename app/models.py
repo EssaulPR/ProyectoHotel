@@ -73,6 +73,8 @@ class RentaHabitacion(db.Model):
     diaInicio = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     diaFinalizado = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     diasDeEstancia = db.Column(db.Integer)
+    Apartado = db.Column(db.Boolean, default=False)
+    Ocupado = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return "<RentaHabitacion> {}".format(self.numPersonas)

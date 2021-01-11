@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 <!-- Mostrar informacion sobre habitaciones del usuario de recepcionista -->
 <!-- MODIFICAR LAS CLASES DESPUES!!! -->
-{% block habitUsR %}
+{% block habitAsignacionRecamara %}
 <section class="cont-cltUsr">
-  <h1>Habitaciones El Cielo</h1>
+  <h1>Habitaciones El Cielo admin</h1>
 
 
   <table class="table">
@@ -20,7 +20,7 @@
         <th scope="col">Dia de salida</th>
         <th scope="col">Dias de estancia</th>
         <th scope="col">Importe Total</th>
-        <th scope="col"></th>
+        <th scope="col">Modifcar</th>
       </tr>
     </thead>
 
@@ -40,11 +40,7 @@
         <td>{{renta[7]}}</td>
         <td>{{renta[8]}}</td>
         <td>{{renta[4]}}</td>
-        <td>
-          <a href="/asignacion_habit/add/{{renta.id}}"><button>Asignar habitación</button></a>
-          <br>
-          <a href="/update_Habit_desocupada/update{{renta.id}}"><button>desocupar</button></a>
-        </td>
+        <td><a href="/update_Habit_desocupada_admin/update{{renta.id}}"><button>desocupar</button></a></td>
       </tr>
     </tbody>
     {% endfor %}

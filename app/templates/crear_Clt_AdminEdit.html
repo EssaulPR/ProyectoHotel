@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 <!-- Mostrar informacion sobre creacion de clientes formulario -->
-{% block asignacion_habit %}
+{% block EditCltAdmin %}
 <section class="cont-crearCtl">
     
     <form action="" method="POST" class="borde">
         {{ form.hidden_tag() }}
-        <h2>Nuevo Cliente</h2>
+        <h2>Editar Cliente</h2>
         <hr>
         <div>
             {% with messages = get_flashed_messages() %}
@@ -17,34 +17,35 @@
             {% endif %}
             {% endwith %}
         </div>
+        
         <div class="cont-form">
 
-            {{ form.fkIdHabitacion(size=25,placeholder="Nombre")}}
+            {{ form.nameClt(size=25,placeholder="Nombre")}}
         </div>
         <div class="cont-form">
 
-            {{ form.fkIdClientes(size=25,placeholder="Apellido Paterno")}}
+            {{ form.apellidoPateClt(size=25,placeholder="Apellido Paterno")}}
         </div>
         <div class="cont-form">
 
-            {{ form.importeTotal(size=25,placeholder="Nombre")}}
-        </div>
-        <div class="cont-form">
-
-            {{ form.numPersonas(size=25,placeholder="Apellido Paterno")}}
-        </div>
-        <div class="cont-form">
-
-            {{ form.diaInicio(size=25,placeholder="Apellido Materno")}}
+            {{ form.apellidoMateClt(size=25,placeholder="Apellido Materno")}}
         </div>
         
         <div class="cont-form">
 
-            {{ form.diaFinalizado(size=25, placeholder="Numero Telefono") }}
+            {{ form.phone(size=25, placeholder="Numero Telefono") }}
         </div>
         <div class="cont-form">
 
-            {{ form.diasDeEstancia(size=25, placeholder="Numero Telefono Auxiliar") }}
+            {{ form.phone2(size=25, placeholder="Numero Telefono Auxiliar") }}
+        </div>
+        <div class="cont-form">
+
+            {{ form.placaCarro(size=25, placeholder="Placa del Carro") }}
+        </div>
+        <div class="cont-form">
+
+            {{ form.placaCarro2(size=25, placeholder="Segundo Carro") }}
         </div>
         <div class="cont-form">
             <!-- {{ form.submit() }} -->
